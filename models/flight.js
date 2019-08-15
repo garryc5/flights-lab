@@ -16,7 +16,10 @@ var flightSchema = new Schema({
     departs:
     {
         type: Date,
-        default: defaultDate = new Date().setFullYear(Date().getFullYear()+1),
+        default: function () {
+        var redate = new Date();
+        redate.setFullYear(redate.getFullYear()+1)
+        return redate.toLocaleDateString();
     }
 }, {
   timestamps: true
