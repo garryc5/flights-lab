@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var flightSchema = new Schema({
+    
     airline: {
         type:String,
         enum: ['American','Southwest','United']
@@ -9,6 +10,7 @@ var flightSchema = new Schema({
 
     flightNo:{
         type: Number,
+        required:true,
         min:10,
         max:9999
     },
@@ -19,7 +21,7 @@ var flightSchema = new Schema({
         default: function () {
         var redate = new Date();
         redate.setFullYear(redate.getFullYear()+1)
-        return redate.toLocaleDateString();
+        return redate.toLocaleDateString();}
     }
 }, {
   timestamps: true

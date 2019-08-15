@@ -1,1 +1,16 @@
-<h1>test3</h1>
+<table>
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>Airline</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><%= flight.flightNo %></td>
+              <td><%= flight.airline %></td>
+              <td><%= flight.departs.toLocaleDateString() %></td>            </tr>
+          </tbody>
+        </table>
+      
