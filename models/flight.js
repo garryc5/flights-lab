@@ -1,6 +1,18 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var destinaionSchema = new Schema({
+    airport:
+    {
+        type:String,
+        enum:['AUS', 'DAL', 'LAX','SEA']
+    },
+    arrival:
+    {
+        type: Date
+    }
+});
+
 var flightSchema = new Schema({
     
     airline: {
@@ -22,7 +34,13 @@ var flightSchema = new Schema({
         var redate = new Date();
         redate.setFullYear(redate.getFullYear()+1)
         return redate.toLocaleDateString();}
-    }
+    },
+    airport:
+    {
+        type:String,
+        enum:['AUS', 'DAL', 'LAX','SEA']
+    },
+    destinaions:[destinaionSchema]
 }, {
   timestamps: true
 });

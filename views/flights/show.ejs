@@ -2,6 +2,7 @@
         <thead>
           <tr>
             <th>Flight Number</th>
+            <th>Airport</th>
             <th>Airline</th>
             <th>Time</th>
           </tr>
@@ -9,8 +10,31 @@
         <tbody>
             <tr>
               <td><%= flight.flightNo %></td>
+              <td><%= flight.airport %></td>
               <td><%= flight.airline %></td>
-              <td><%= flight.departs.toLocaleDateString() %></td>            </tr>
+              <td><%= flight.departs.toLocaleDateString() %></td>  
+            </tr>
+            <%flight.destinaions.forEach(function(d){%>
+            <tr>
+                <td>destinaion</td>
+                <td><%= d.airport %></td>
+                <td></td>  
+                <% if(d.arrival){%>
+                <td><%= `${d.arrival.toLocaleDateString()} :${d.arrival.toLocaleTimeString()}`%></td>
+                <%}%>
+              
+            </tr>
+            <%})%>
           </tbody>
         </table>
+        <form action="/flights/<%=flight._id%>/destinaion" method="POST">
+        <select name="airport">
+            <option value="AUS">Austin</option>
+            <option value="DAL">Dallas</option>
+            <option value="LAX">L.A.</option>
+            <option value="SEA">Seatle</option>
+        </select>
+        <input type="text" name="arrival" placeholder="12am default time">
+        <button>Click to add destinaion</button>
+        </form>
       

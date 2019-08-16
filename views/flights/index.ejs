@@ -2,6 +2,7 @@
     <thead>
       <tr>
         <th>Flight Number</th>
+        <th>Airport</th>
         <th>Airline</th>
         <th>Time</th>
       </tr>
@@ -10,6 +11,7 @@
       <% flights.forEach(function(f) { %>
         <tr>
           <td><%= f.flightNo %></td>
+          <td><%= f.airport %></td>
           <td><%= f.airline %></td>
           <td><%= f.departs.toLocaleDateString() %></td>
           <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
