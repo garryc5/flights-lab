@@ -1,4 +1,4 @@
-<link rel='stylesheet' href='/stylesheets/style.css' />
+<%- include('header')%>
 <table>
         <thead>
           <tr>
@@ -22,8 +22,9 @@
                 <td></td>  
                 <% if(d.arrival){%>
                 <td><%= `${d.arrival.toLocaleDateString()} :${d.arrival.toLocaleTimeString()}`%></td>
-                <%}%>
-              
+                <%}else{%>
+                    <td></td>
+                    <%}%>      
             </tr>
             <%})%>
           </tbody>
@@ -38,4 +39,4 @@
         <input type="datetime-local" name="arrival">
         <button>Click to add destinaion</button>
         </form>
-      
+        <%- include('footer')%>  
