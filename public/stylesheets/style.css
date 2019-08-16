@@ -2,7 +2,23 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+form
+{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 50vmin;
+}
 a {
   color: #00B7FF;
+}
+table, tr
+{
+  background-color: rgb(85, 95, 88);
+  color: cornsilk;
+  border-spacing: 1vmax;
+  border-collapse: collapse;
+  border-bottom: 3vmax solid  rgb(185,175,185);
 }
