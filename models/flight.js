@@ -31,9 +31,9 @@ var flightSchema = new Schema({
     {
         type: Date,
         default: function () {
-        var redate = new Date();
-        redate.setFullYear(redate.getFullYear()+1)
-        return redate.toLocaleDateString();}
+            var redate = new Date();
+            redate.setFullYear(redate.getFullYear()+1);
+            return redate}
     },
     airport:
     {
